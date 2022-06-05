@@ -12,7 +12,7 @@ using System.Reflection;
 
 namespace NoSleep
 {
-    [BepInPlugin("aedenthorn.NoSleep", "No Sleep", "0.1.0")]
+    [BepInPlugin("aedenthorn.NoSleep", "No Sleep", "0.1.2")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -53,14 +53,14 @@ namespace NoSleep
                 return false;
             }
         }
-        [HarmonyPatch(typeof(TimeModule), "OnHourChange")]
-        static class TimeModule_OnHourChange_Patch
+        [HarmonyPatch(typeof(TimeModule), "OnMinuteChange")]
+        static class TimeModule_OnMinuteChange_Patch
         {
-            public static void Postfix(TimeModule __instance, int passHours)
+            public static void Postfix(TimeModule __instance)
             {
                 if (!modEnabled.Value)
                     return;
-                if (__instance.CurrentTime.Hour == __instance.EndSleepHour)
+                if (__instance.CurrentTime.Hour == __instance.EndSleepHour - 1 && __instance.CurrentTime.Minute == 59)
                 {
                     Dbgl("Starting fake sleep");
                     fakeSleep = true;
