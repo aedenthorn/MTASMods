@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoSleep", "NoSleep\NoSleep.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameSpeed", "GameSpeed\GameSpeed.csproj", "{92ABEBE7-27D9-4430-8F8E-46EED7C54AF9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CameraTweaks", "CameraTweaks\CameraTweaks.csproj", "{17466EDB-6D0A-4F92-B48C-A9045581003A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{92ABEBE7-27D9-4430-8F8E-46EED7C54AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92ABEBE7-27D9-4430-8F8E-46EED7C54AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92ABEBE7-27D9-4430-8F8E-46EED7C54AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17466EDB-6D0A-4F92-B48C-A9045581003A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17466EDB-6D0A-4F92-B48C-A9045581003A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17466EDB-6D0A-4F92-B48C-A9045581003A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17466EDB-6D0A-4F92-B48C-A9045581003A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

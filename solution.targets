@@ -78,6 +78,11 @@
       <HintPath>$(ManagedDataPath)\Pathea.DesignerConfig.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Cinemachine">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ManagedDataPath)\Cinemachine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   
   <!-- Add Unity references -->
