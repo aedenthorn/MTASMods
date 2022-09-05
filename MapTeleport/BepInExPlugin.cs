@@ -21,7 +21,7 @@ using UnityEngine;
 
 namespace MapTeleport
 {
-    [BepInPlugin("aedenthorn.MapTeleport", "Map Teleport", "0.1.0")]
+    [BepInPlugin("aedenthorn.MapTeleport", "Map Teleport", "0.2.0")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -69,13 +69,32 @@ namespace MapTeleport
                 Vector3 mouseWorldPosition = __instance.GetMouseWorldPosition(sceneConfig.mapCenter, 1000f);
                 if (Module<ScenarioModule>.Self.CurScene != AdditiveScene.Main)
                 {
-                    Module<ScenarioModule>.Self.LoadScenario(AdditiveScene.Main, new PosRot(mouseWorldPosition, Module<Player>.Self.GameRot));
+                    Module<ScenarioModule>.Self.LoadScenario(AdditiveScene.Main, new PosRot(mouseWorldPosition, GetGameRot()));
                 }
                 else
                 {
                     Module<Player>.Self.GamePos = mouseWorldPosition;
                 }
                 Module<UIModule>.Self.PopAllUI();
+            }
+
+            private static Vector3 GetGameRot()
+            {
+                var player = Module<Player>.Self;
+                if (player == null)
+                {
+                    return Vector3.zero;
+                }
+                var ride = AccessTools.FieldRefAccess<Player, Actor>(player, "currentRidable");
+                if (ride != null)
+                {
+                    return ride.GameRot;
+                }
+                if (player.actor == null)
+                {
+                    return Vector3.zero;
+                }
+                return player.actor.GameRot;
             }
         }
     }

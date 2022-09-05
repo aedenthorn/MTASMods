@@ -4,19 +4,21 @@ using BepInEx.Logging;
 using Cinemachine;
 using HarmonyLib;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
 using UnityEngine;
 using static Cinemachine.CinemachineFreeLook;
 
 namespace CameraTweaks
 {
-    [BepInPlugin("aedenthorn.CameraTweaks", "CameraTweaks", "0.2.0")]
+    [BepInPlugin("aedenthorn.CameraTweaks", "CameraTweaks", "0.3.0")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
 
         public static ConfigEntry<bool> modEnabled;
         public static ConfigEntry<bool> isDebug;
+        public static ConfigEntry<bool> saveValues;
         public static ConfigEntry<float> zoomSpeed;
         public static ConfigEntry<string> increaseDistanceKey;
         public static ConfigEntry<string> decreaseDistanceKey;
@@ -25,6 +27,7 @@ namespace CameraTweaks
         public static ConfigEntry<string> increaseRadiusKey;
         public static ConfigEntry<string> decreaseRadiusKey;
         public static ConfigEntry<string> resetCameraKey;
+        public static ConfigEntry<string> savedValues;
 
         public static Dictionary<int, List<Orbit>> cameraDict = new Dictionary<int, List<Orbit>>();
 
@@ -39,6 +42,7 @@ namespace CameraTweaks
             context = this;
             modEnabled = Config.Bind<bool>("General", "Enabled", true, "Enable this mod");
             isDebug = Config.Bind<bool>("General", "IsDebug", true, "Enable debug logs");
+            saveValues = Config.Bind<bool>("Options", "SaveValues", true, "Save camera values");
             zoomSpeed = Config.Bind<float>("Options", "ZoomSpeed", 0.01f, "Speed to zoom in and out");
             resetCameraKey = Config.Bind<string>("Options", "ResetCameraKey", "[5]", "Key to reset camera to default");
             increaseDistanceKey = Config.Bind<string>("Options", "IncreaseDistanceKey", "[2]", "Key to hold to increase distance");
@@ -47,6 +51,7 @@ namespace CameraTweaks
             decreaseHeightKey = Config.Bind<string>("Options", "DecreaseHeightKey", "[3]", "Key to hold to decrease height");
             increaseRadiusKey = Config.Bind<string>("Options", "IncreaseRadiusKey", "[1]", "Key to hold to increase radius");
             decreaseRadiusKey = Config.Bind<string>("Options", "DecreaseRadiusKey", "[7]", "Key to hold to decrease radius");
+            savedValues = Config.Bind<string>("ZZ_Auto", "SavedValues", "", "Saved camera values");
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), null);
 
@@ -67,6 +72,24 @@ namespace CameraTweaks
                         origOrbits.Add(orbit);
                     }
                     cameraDict[__instance.GetInstanceID()] = origOrbits;
+                    if (saveValues.Value && savedValues.Value.Length > 0)
+                    {
+                        try
+                        {
+                            var v = savedValues.Value.Split(';');
+                            for (int i = 0; i < v.Length; i++)
+                            {
+                                var v2 = v[i].Split(',');
+                                __instance.m_Orbits[i].m_Height = float.Parse(v2[0], NumberStyles.Any, CultureInfo.InvariantCulture);
+                                __instance.m_Orbits[i].m_Radius = float.Parse(v2[1], NumberStyles.Any, CultureInfo.InvariantCulture);
+                            }
+                            Dbgl("loaded saved orbits for camera");
+                        }
+                        catch
+                        {
+
+                        }
+                    }
                 }
 
                 float heightPercent = 1;
@@ -109,16 +132,17 @@ namespace CameraTweaks
                 }
                 else return;
 
-                var originalOrbits = new CinemachineFreeLook.Orbit[__instance.m_Orbits.Length];
+                List<string> values = new List<string>();
                 for (int i = 0; i < __instance.m_Orbits.Length; i++)
                 {
-                    originalOrbits[i].m_Height = __instance.m_Orbits[i].m_Height;
-                    originalOrbits[i].m_Radius = __instance.m_Orbits[i].m_Radius;
+                    __instance.m_Orbits[i].m_Height = Mathf.Max(0.02f, __instance.m_Orbits[i].m_Height * heightPercent);
+                    __instance.m_Orbits[i].m_Radius = Mathf.Max(0.02f, __instance.m_Orbits[i].m_Radius * radiusPercent);
+                    if (saveValues.Value)
+                        values.Add($"{__instance.m_Orbits[i].m_Height},{__instance.m_Orbits[i].m_Radius}");
                 }
-                for (int i = 0; i < __instance.m_Orbits.Length; i++)
+                if (saveValues.Value)
                 {
-                    __instance.m_Orbits[i].m_Height = Mathf.Max(0.02f, originalOrbits[i].m_Height * heightPercent);
-                    __instance.m_Orbits[i].m_Radius = Mathf.Max(0.02f, originalOrbits[i].m_Radius * radiusPercent);
+                    savedValues.Value = string.Join(";", values);
                 }
             }
         }
