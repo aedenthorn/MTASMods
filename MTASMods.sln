@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CameraTweaks", "CameraTweak
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomTextures", "CustomTextures\CustomTextures.csproj", "{485760AA-861D-40FD-855A-D0A5B065B746}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimationSpeed", "AnimationSpeed\AnimationSpeed.csproj", "{A3ECF0B5-DC22-45F2-ACCB-B15E828B8060}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LootVacuumTweaks", "LootVacuumTweaks\LootVacuumTweaks.csproj", "{2C8204BA-6098-4EA6-A019-58C859D9065F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{485760AA-861D-40FD-855A-D0A5B065B746}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{485760AA-861D-40FD-855A-D0A5B065B746}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{485760AA-861D-40FD-855A-D0A5B065B746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3ECF0B5-DC22-45F2-ACCB-B15E828B8060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3ECF0B5-DC22-45F2-ACCB-B15E828B8060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3ECF0B5-DC22-45F2-ACCB-B15E828B8060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3ECF0B5-DC22-45F2-ACCB-B15E828B8060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8204BA-6098-4EA6-A019-58C859D9065F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8204BA-6098-4EA6-A019-58C859D9065F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8204BA-6098-4EA6-A019-58C859D9065F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8204BA-6098-4EA6-A019-58C859D9065F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

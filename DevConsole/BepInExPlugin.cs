@@ -11,6 +11,7 @@ using Pathea.ItemNs;
 using Pathea.MonsterNs;
 using Pathea.Mtas;
 using Pathea.NpcNs;
+using Pathea.RideNs;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +22,7 @@ using UnityEngine.UI;
 
 namespace DevConsole
 {
-    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.2.0")]
+    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.3.0")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -139,7 +140,12 @@ namespace DevConsole
 
                     var monsters = ((Dictionary<int, MonsterProto>)AccessTools.Field(typeof(MonsterDB), "MonsterProtos").GetValue(null)).Values.Select(i => TextMgr.GetStr(i.nameId) + ": " + i.id).ToList();
                     monsters.Sort();
-                    File.WriteAllLines(Path.Combine(path, "monsters.txt"), monsters); 
+                    File.WriteAllLines(Path.Combine(path, "monsters.txt"), monsters);
+
+                    var rides = AccessTools.FieldRefAccess<RideModule, ConfigReaderId<RidableProtoData>>(Module<RideModule>.Self, "rideProtos").Select(i => TextMgr.GetStr(i.nameId) + ": " + i.id).ToList();
+                    rides.Sort();
+                    File.WriteAllLines(Path.Combine(path, "ridables.txt"), monsters); 
+                    
                     Dbgl($"Dumped data to {path}");
                     return;
                 }
