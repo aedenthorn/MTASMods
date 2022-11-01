@@ -22,7 +22,6 @@ namespace MapTeleport
         public static ConfigEntry<string> modKey;
         public static ConfigEntry<string> teleportKey;
 
-        //public static ConfigEntry<int> nexusID;
 
         public static void Dbgl(string str = "", LogLevel logLevel = LogLevel.Debug)
         {

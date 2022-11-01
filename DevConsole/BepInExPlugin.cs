@@ -22,7 +22,7 @@ using UnityEngine.UI;
 
 namespace DevConsole
 {
-    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.3.0")]
+    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.3.1")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -144,7 +144,7 @@ namespace DevConsole
 
                     var rides = AccessTools.FieldRefAccess<RideModule, ConfigReaderId<RidableProtoData>>(Module<RideModule>.Self, "rideProtos").Select(i => TextMgr.GetStr(i.nameId) + ": " + i.id).ToList();
                     rides.Sort();
-                    File.WriteAllLines(Path.Combine(path, "ridables.txt"), monsters); 
+                    File.WriteAllLines(Path.Combine(path, "ridables.txt"), rides); 
                     
                     Dbgl($"Dumped data to {path}");
                     return;
