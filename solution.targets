@@ -60,7 +60,7 @@
   <ItemGroup Label="_Data">
     <Reference Include="Assembly-CSharp">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(GamePath)\Assembly-CSharp.dll</HintPath>
+      <HintPath>$(ManagedDataPath)\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
