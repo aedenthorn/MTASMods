@@ -60,7 +60,7 @@
   <ItemGroup Label="_Data">
     <Reference Include="Assembly-CSharp">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(GamePath)\Assembly-CSharp.dll</HintPath>
+      <HintPath>$(ManagedDataPath)\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -71,6 +71,21 @@
     <Reference Include="Pathea.Framework">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(ManagedDataPath)\Pathea.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Pathea.AssetMgr">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ManagedDataPath)\Pathea.AssetMgr.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Pathea.WhiteCat">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ManagedDataPath)\Pathea.WhiteCat.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AstarPathfindingProject">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ManagedDataPath)\AstarPathfindingProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Pathea.DesignerConfig">

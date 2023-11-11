@@ -78,13 +78,13 @@ namespace MapTeleport
                 var ride = AccessTools.FieldRefAccess<Player, Actor>(player, "currentRidable");
                 if (ride != null)
                 {
-                    return ride.GameRot;
+                    return ride.GameRot.eulerAngles;
                 }
                 if (player.actor == null)
                 {
                     return Vector3.zero;
                 }
-                return player.actor.GameRot;
+                return player.actor.GameRot.eulerAngles;
             }
         }
     }

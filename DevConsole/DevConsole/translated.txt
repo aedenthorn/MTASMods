@@ -1,0 +1,653 @@
+Show battlefield data panel
+Stop showing battlefield data panel
+Hide behavior system panel
+Show all global labels
+Show all individual tags
+Add AI global label
+Delete AI global label
+Add AI individual label
+Delete AI individual tags
+Create group NPCs
+Donate
+Delete donation
+Add donation box
+Delete donation box
+Open donation UI
+Show & close the favorability attribute panel
+Add holiday data modification
+Delete holiday data modification
+Hide and seek player registration
+Start sandboarding festival
+Start dancing
+Force dancing activities to start
+Open & Joint Day System
+Close holiday system
+Open the festival system
+Show hate data panel
+Stop showing hate data panel
+Unlimited interactions
+Start interaction
+Stop interaction
+Send specified event
+Hide NPCs
+Create random NPC
+Pull the NPC to the player's position and stop the AI
+Pull NPC to Faraway
+Pull all NPCs to the player's position and stop the AI
+Stop all actions of the specified NPC
+Stop NPC AI
+Start NPC AI
+Add NPC behavior
+Add NPC behavior
+Add NPC behavior
+Add NPC command behavior
+Add NPC command behavior
+Remove NPC command behavior
+Add Npc plot behavior
+Add Npc plot behavior
+Delete Npc plot behavior
+Order the NPC to return to Sandstone Town
+Order NPC to leave town
+Forced deletion of random Npc
+Start NPC gift-giving task
+Add equipment to NPCs
+Remove the NPC's equipment, 0 is Head, 1 is Body, 2 is Foor, and 3 is Shoes.
+Remove NPC decorations
+Part-based hidden jewelry model
+Restoring the hidden jewelry model based on parts
+Get list content
+Add Npc Flag
+Delete Npc Flag
+Check if NPC is missing behavior tree
+Check if all NPCs are missing behavior trees
+NPC dress up
+NPC avatar change
+Added shielding random NPC
+Remove and block random NPCs
+NPC dress up
+Show & close party properties panel
+Show & close pathfinding system panel
+Turn on & off pathfinding display
+Display the number of pathfinding nodes
+Unlock pet system
+Recruit pets
+Set pet status
+Set pet dispatch behavior
+Cancel pet recruitment
+Summon pets
+Start the running bull game
+The player gives up the game of teasing cows
+Explode props
+Start the bull sprint
+Turn on & off the Bull Rush special effects
+Show & hide Bull Run mini-game data panel
+SceneItem adds task icon
+SceneItem delete task icon
+Test creating sceneItem (in front of player)
+Test deleting sceneItem
+Set sceneItem interaction state
+Lock sceneItem interaction state
+Test the creation of a bus stop (in front of the player)
+Test Create Build Mark
+Set desk lamp status
+Press the lamp once
+show build system label
+Hide build system label
+Add build system tag
+Remove build system tags
+Add monster attribute modifications
+Delete monster attribute modifications
+Dump various IDs to files
+Asynchronously instantiate resources
+Preload all resources in the bundle
+Compare resource loading
+Start caching loaded resources
+Stop caching loaded resources
+Set the number of resources requested from the system at the same time
+add follow
+Add followers and customize behavior trees
+Delete follow
+Testing Logan's Battle Countdown
+customer feedback
+The dawn of testing
+Testing the Winter Festival BBQ UI
+Episode Ending Winter Festival Dress Up
+Testing the Winter Festival Grill
+Test Winter Festival Dancing
+Testing the Winter Festival Dancing UI
+Test punch ranking
+Test anchor rankings
+Test whether the hair style is suitable
+Unlock facelift
+An image appears on the head of the test Npc
+Test peripheral UI
+Test the magic mirror for plastic surgery
+Test to increase the number of orders players can receive
+Test players go to bed early
+Test commission discount
+Test store large transactions
+Test stargazing
+Test stargazing solo
+test jousting
+The test competition is over
+Test the team UI for the competition
+Test the tournament betting UI
+Join NPC temporary conversation
+Join the caching conversation
+Join the caching conversation
+Join the lazy caching conversation
+Add conversation content directly to cache
+Dialogue system wakes up and refreshes
+Test the dialogue system
+Test dialogue system end event
+continue the conversation
+Test conversation management
+test event dialog
+Added very low damage trinkets
+Add invincible flash-kill accessories, parameter = whether to flash-kill or not
+Add props to specify unique attributes: prop id, attribute type, gain type, value
+Generate props to backpack: GenId, times
+Generate props to backpack according to Tag
+Empty backpack
+Add all props
+Add propsByItemTag
+Add propsByTag
+Add all props
+Add props
+Remove props
+Add props id[-idMax],count,grade[;……]
+Add props (Id,Count,Grade[0-3])
+Add props (Id,Count,Grade[0-3])
+Test submission props
+Test the function of setting reference in the toolbar
+Change gold coins
+Test adding task props
+Test deletion of task props
+Test setting the number of extra backpack slots
+Test release order
+Clear order board
+Add Duvos order trigger
+Remove Duvos order trigger
+Add operations to the order system
+Order system removal operation
+Release specified order
+Bonus bonus for orders completed on the same day
+Submitting items of higher quality than required is a bonus effect
+Open the order board UI
+Lock order Npc
+Test release of maintenance tasks
+Generate repair objects
+Test to generate maintenance objects
+Submit all tasks
+Modify task count
+Test area tasks release multiple maintenance tasks
+Test area tasks release maintenance tasks
+Test the regional task with the specified ID to publish maintenance tasks
+Test and specify all regional tasks to release maintenance tasks
+Release of unlocking scenario tasks
+Try posting an item recapture scenario quest
+Try publishing a scenario task of removing sand
+Try publishing a scenario task for item repair
+Attempt to publish a specified number of scenario tasks
+Try posting an item recapture scenario quest
+Try publishing a scenario task of removing sand
+Try publishing a scenario task for item repair
+Try posting an obstacle-clearing scenario task
+Test release of sand cleaning task
+Post common tasks
+Publish common tasks and receive tasks
+Set player workshop level
+Added player workshop points
+Show player workshop status
+Show all workshop status
+Distribute workshop ranking rewards
+Distribute annual workshop point ranking rewards to backpacks
+Send workshop annual points ranking reward emails
+Show workshop monthly ranking records
+Show workshop monthly data
+Remove NPC data
+Set Npc daily data
+Display the current task (0=publishing, 1=running, 2=ended)
+Show completion record
+Start task
+Submit task
+Add task icon
+delete task icon
+Add quest items
+abandon task
+Add task required items
+Delete mission required items
+The first running quest tracks the NPC
+The first running task deletes the tracking NPC
+Set date lock status
+Set date lock payment completed
+Query item name by Id
+Test FadeMask
+Test FadeMaskOut
+Test sending email
+Test sending anchor email
+Test all sent emails
+Test reading email
+Show mailbox messages
+Send temporary email
+Send email and open
+Send email and open
+Trigger scene switching event
+Trigger scene switching event
+Switch to the exit, usually scene name + In, such as SaloonIn
+Switch to the subway instance (killing lizardmen)
+Switch to Lost Paradise (fighting robots)
+Switch to shipwreck
+switch to cave
+Switch to Peach Tower copy
+Switch to sandboarding area
+Switch to barber shop (Pablo's house)
+Switch to Portia Tunnel
+Switch to the Mole Man instance
+Switch to a copy of Camp Logan
+Switch to warehouse copy
+Switch to the copy of Space Relics
+Switch to alliance meeting
+Switch to outer space
+Query item ID
+Check current weather
+Check the weather for a certain day
+Switch the weather tomorrow, 0=normal sunny day, 1=rainy day, 2=sandstorm, 3=cloudy sunny day, 4=hot sunny day, 5=snowing
+Print active weather type
+Show current research status
+Show the status of all research objects
+Check researchable status and reason
+start a study
+Accelerate research
+Show cost cd statistics
+Unlock blueprints
+Unlock all blueprints
+Increase player experience points
+Change players' lives
+Change player physical strength
+Players are forced to sleep
+Players are forced to go home
+Increase the number of player combo segments
+Unlocks player dash attack
+Block players from sprinting
+Players do not consume physical energy
+Add Buff
+Remove Buff
+Hide player
+Show players
+Turn off player fall damage
+Enable player fall damage
+Actor displays bubble dialogue
+Add AI system tag
+Add a time-limited tag to the AI ​​system
+Remove AI system tag
+Add AI system tag
+Add a time-limited tag to the AI ​​system
+Remove AI system tag
+Test tone
+Turn off buff effects
+Turn on buff effects
+Npc discoloration
+Turn on buff effects
+Set actor to ignore spawn distance
+Pause time
+Jump to date
+SetTimeScale
+SetTimeScale
+Reset UI and input state
+reading test
+photo album
+Open free camera
+Get tools
+Research
+Assembly manual
+Show/close UI display
+View Home Properties
+Open the antiquities restoration machine outside your home
+test list
+Test PK forced to end
+Test entering planting mode
+Test virtual mouse is turned on
+Test virtual mouse off
+Test the camera mode of Canvas
+Test the camera mode of Canvas
+Open the home default interface
+Test random automatic planting multiple times
+Test random automatic planting (unlimited)
+Test random automatic planting (on soil)
+Test automatic addition of water and nutrients
+Test automatic harvesting
+Test automatically destroyed
+Auto archive
+Automatically archive multiple times
+Reset copy
+Set VoxelDungeon copy unlock depth
+Set VoxelDungeon2 copy unlock depth
+Set VoxelDungeon3 copy unlock depth
+Set VoxelDungeon4 copy unlock depth
+Return to entrance
+Add a copy key event (used for testing UI, not actually added)
+Delete copy key event (used for testing UI, not actually deleted)
+Test dangerous relic generation
+Test abandoned ruins generation
+Generate voxel bomb
+Testing a random copy of the Peach Tower scene
+Test the random copy of the shipwreck scene
+Testing the quick archive of random trial dungeon scenes
+Test mining replica scenario
+Test mining copy 2 scenario
+Test mining copy 3 scenario
+Test mining copy 4 scenario
+Test leaving the mining copy
+Print all store items
+Lock the store data of an NPC
+Remove the lock of an NPC
+Refresh all store items
+Refresh specified store items
+Refresh the specified store items multiple times and check
+Store item restoration
+Price index refresh
+Print current price index
+Refresh the price index multiple times in a row
+Buy items
+Recycling items
+Buy back items
+open store
+Apply price influence to all stores
+Apply recycling price effects to all stores
+Open the beast card
+Add custom bubbles
+new time format
+Open the sound test tool
+Set the voice to English
+Set the voice to Chinese
+Close the sound test tool
+trigger audio event
+Trigger audio events to player position
+Load sound bank
+Uninstall sound bank
+Forced setting of Bgm Season (0-3)
+TestBgmLock
+TestBgmUnlock
+AddBossBattleBgm
+RemoveBossBattleBgm
+Add control guidelines
+Add all control guidelines
+Add general guidance
+Added all general guidance
+Clear all existing control guidelines
+Generate dynamic treasure chest
+Generate dynamic treasure chests to specified scenes
+Remove dynamic treasure chest
+Set treasure chest map icon
+Set the treasure chest to disappear after opening it
+Hide map mask
+Show map mask
+Open the teleport map interface
+Hide map icon in settings
+show building text
+Refresh resource area
+Refresh task resource area
+Add main scene resource point at player coordinates
+Clear all resource points in the main scene
+Resource point added to prohibit Hud
+Resource point removal ban Hud
+Unlock workshop manual/assembly bench
+Immediately assemble the currently selected parts
+Enable consumption-free assembly
+Turn off consumption-free assembly
+Play cutscene
+Play cutscene
+Take the train to Shashi Town
+Octopus
+Peng Hu thinks you are an accomplice of Logan
+Lizard people throw rubbish into Lake Matt
+Cooper family dinner
+Greenhouse attack
+Turn on the moisturizer
+Install crane
+farewell party
+Falling off the ropeway
+Install ropeway
+Take the ropeway
+The Lizard King boards the train
+The train falls, Justi saves the player
+Owen treats guests to dinner
+Miners threaten Yan at chamber of commerce
+Railway bridge construction celebration ceremony
+Museum opening ceremony
+Subaki transmission
+Peng Hu's instant kill
+Let’s take the ropeway back to Shashi Town
+The situation in the town after the sandstorm
+Mingte arrives
+Playback a cutscene using id
+play drama
+play sit down drama
+Updated drama position test
+Unlock all recipes
+Unlock recipes
+Unlock levels of home
+Unlock locked sandwall
+Open the Region interface
+Open the Building interface
+Open the InDoorBuilding interface
+Open the workshop name setting interface
+Set farm level
+Open the Region interface
+Get Dangerous Ruins results
+Get the latest dangerous ruins results
+Set the maximum level cleared for all trial copies
+Leave the trial copy
+Unlock the maximum length of the trial copy
+Modify actor attributes
+Show actor properties
+Turn off actor properties
+Create a mount
+Create a mount specifying the InstanceID
+Delete mount
+Check the sprint speed of the mount
+Add or subtract mount loyalty
+Add or subtract mount stamina
+Player dismounts
+Turn off shadow
+Turn on shadow
+ Debug IME
+mipmap streaming loading
+Total mipmap map memory overhead
+Release unreferenced resources
+Set up a comparison booth
+Issue fragment exchange order
+Print museum placement status
+Print Museum Submission Record
+Upgrade museum room
+Show/hide museum reward UI
+Add museum submission (useless)
+Add museum repository submission
+Switch Museum Exhibit Display
+Set museum level
+Unlock knowledge
+Set all knowledge and experience to the maximum
+Reset all knowledge points
+Reset all knowledge points by type
+Show a statistic
+Turn on the fireworks
+AB debugger
+AB debugger
+Adventure Machine Player App Combat Events
+Adventure Machine Enemy App Combat Events
+Refresh adventure machine configuration
+Unlock riding stable
+Summon a mount
+Refresh the mount store
+Set up all mount shop rentals for free
+Set the mount store mount to the specified prototype ID
+SetLodGroupLevel
+Whether to unlock achievements
+Unlock achievements
+Lock achievements
+Lock all achievements
+Check all achievements achieved
+Script npc add behavior
+Script npc deletion behavior
+Add modifier to script
+Script to remove modifier
+Script sets NPC non-interactive status
+Script sets all items to non-interactive status
+Run plot script
+Fill all accumulated sand
+Clear out all accumulated sand
+SetGlobalInfo
+RemoveGlobalKey
+Add real time timer
+Remove real time timer
+Add game time timer
+Remove game time timer
+Check if there are any resource points in the resource area
+Water tower setting water volume
+Generate prey algorithm test
+Set whether to display prey biting the hook
+Add bait for sand fishing
+Set whether to display prey biting the hook
+add a fish
+Add center tip
+show hint
+Unlimited gift giving on the day
+Unlimited gift giving on the day of cancellation
+Show all npc preferences
+Show all preferences of all NPCs
+Test wishing
+Test wishing
+Open the treasure chest interface
+Start dancing qualifications
+Start dancing
+End of dance activity
+Create dancing cards
+Get props
+camera lock npc
+Camera unlocked
+Enter photo mode
+Add a camera prop to unlock photo mode
+Unlock all saved photos to album
+Unlock a specified pre-saved photo to the album
+Unlock the pre-saved screenshots corresponding to cutscene into the album
+Unlock all cutscene pre-saved screenshots to the album
+Enter photo mode
+Enter photo mode
+Add an id that identifies the item
+Remove the id of an identifiable item
+Open newspaper UI
+Open historical newspaper UI
+text filter
+trigger exception
+Abort
+AccessViolation
+FatalError
+PureVirtualFunction
+Unlock a camp
+Upgrade a campsite
+Upgrade a campsite facility
+Test adding navigation mark scene location
+Test removing navigation mark scene position
+Find the current scene according to the path in the gameobject.vis file in the exe directory and set active
+cheat check
+Test crashes
+Set up to use occlusion culling
+Start a drop mission
+Create a small animal based on the given Id
+Start ordering appointment
+Increase player score
+full of player rage
+Full of Npc anger
+Open the breeding store UI
+Default test sand drawing game
+Test the sand drawing game and NPC
+Test delegate ui
+Added test props for breeding animals
+Unlock the ability to farm animals
+Test changing news content
+Open the news UI
+Test adding ads
+Test canceling ads
+Check current prospecting level
+Prospecting level +1
+Prospecting level to maximum
+Open the prospector UI
+Unlock designated collection
+Unlock all collections
+Unlock all prop collection
+Unlock all creatures to collect
+Unlock all scene collections
+Create a gift
+Unlock the furniture part corresponding to the ID
+Activate magic mirror chip
+Get chip configuration list
+Get task list
+Enter the weather forecast UI
+Get the number of items available for the magic mirror
+Add today's work log (npcinstanceId, item id, unitName, event type, item quality, item quantity)
+Add today's work log (npcinstanceId, item id, unitItemId, event type, item quality, item quantity)
+Add home assistant
+Add favorability influence
+Remove favorability influence
+Remove all additional favorability effects
+Add a single favorability Lock
+Deleting a single favor affects Lock
+Adds all normal opinion effects Lock
+Removes all normal favorability Locks
+Adds all extra favorability effects Lock
+Remove all extra favorability effects Lock
+Add all favorability effects Lock
+Delete all favorability effects Lock
+Set special rules for gift giving
+Set game center level
+Test Central Prompt Group Information
+Print installed dlc
+GM instructions, the player moves to a position other than this scene, the front position and the back direction, the degree is 0-360 degrees
+GM instructions, the player moves to a location other than the scene, and the direction is 180 degrees or 0 degrees.
+GM instructions, the player moves to the position of this scene
+GM command to switch image quality
+GM command to switch texture quality
+GM command number of lights per pixel
+GM command shadow quality settings
+GM command shadow distance setting
+GM command vertex bone number
+GM command vertical synchronization
+GM command lod (level of detail multiple)
+GM Commands Vision Shadows
+GM command tree shaking (vegetation animation)
+GM command volume light
+GM command grass lod
+GM command Scene Space Reflections (screen space reflection)
+GM command Ambient Occlusion (Ambient Occlusion))
+GM command Bloom full screen floodlight)
+GM command anti-aliasing
+GM command automatic exposure
+GM command height fog
+GM terrain quality
+GM character enhancement shadow
+GM special effects quality
+GM applies dynamic skeleton
+GM cloth visible distance
+GM motion blur
+Maximum distance displayed by GM character model
+GM Model Cloud (Cloud Quality)
+GM reflex
+Save all settings
+Add player behavior
+Add player behavior
+Delete player behavior
+Test sending system error message
+Kill specified monster
+kill all monsters
+Delete specified monster
+create monster
+Create all monsters
+Create monster and stop Ai
+Sign an order agreement
+Upgrade Subscription Agreement
+Collect ordered goods
+Show plot script variables
+Add plot script variables
+Delete plot script variables
+Set plot script variables
