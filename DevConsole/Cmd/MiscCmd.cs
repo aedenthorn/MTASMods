@@ -1376,6 +1376,7 @@ namespace Pathea
             {
                 return;
             }
+            nameStr = nameStr.Replace('_', ' ');
             foreach (ItemPrototype itemPrototype in Module<ItemPrototypeModule>.Self.GetDataListByName(nameStr))
             {
                 if (itemPrototype == null)

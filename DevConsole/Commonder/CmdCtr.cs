@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Text;
-using DevConsole;
+﻿using DevConsole;
 using Pathea;
 using Pathea.FrameworkNs;
 using Pathea.UISystemV2.UI;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace Commonder
 {
@@ -66,18 +64,7 @@ namespace Commonder
             if (Input.anyKeyDown)
             {
 
-                bool flag = false;
-                foreach (KeyCode keyCode in toggleHotKey)
-                {
-                    if (keyCode == toggleHotKey[0])
-                    {
-                        flag = Input.GetKey(keyCode);
-                    }
-                    else
-                    {
-                        flag = (flag && Input.GetKey(keyCode));
-                    }
-                }
+                bool flag = Input.GetKey(BepInExPlugin.hotkey.Value);
                 if (!activeCmder && flag)
                 {
                     BepInExPlugin.Dbgl("activating");
@@ -212,9 +199,6 @@ namespace Commonder
 
 
         public List<string> commandHistories = new List<string>();
-
-        [SerializeField]
-        public KeyCode[] toggleHotKey = { KeyCode.F1 };
 
         [SerializeField]
         public CanvasGroup canvasGroup;

@@ -27,7 +27,7 @@ namespace Pathea.SocialNs
         }
         public bool CanShow(int itemId)
         {
-            return Module<ItemPrototypeModule>.Self.GetItemName(itemId).Contains(filter);
+            return Module<ItemPrototypeModule>.Self.GetItemName(itemId).ToLower().Contains(filter);
         }
 
         public void OnGUI()
@@ -37,7 +37,7 @@ namespace Pathea.SocialNs
 
             GUILayout.BeginArea(new Rect(0f, 80f, (float)num, (float)(Screen.height - 160)), GUI.skin.box);
             GUILayout.BeginHorizontal();
-            filter = GUILayout.TextField(filter, new GUILayoutOption[] { GUILayout.ExpandWidth(true) });
+            filter = GUILayout.TextField(filter, new GUILayoutOption[] { GUILayout.ExpandWidth(true) }).ToLower();
             if (GUILayout.Button("X", new GUILayoutOption[] { GUILayout.Width(60) }))
             {
                 enabled = false;
@@ -61,8 +61,8 @@ namespace Pathea.SocialNs
                         GUILayout.Width((float)width)
                         }))
                         {
-                            CmdCtr.Instance.inputField.text += item.id;
-                            CmdCtr.Instance.inputField.caretPosition = CmdCtr.Instance.inputField.text.Length;
+                            CmdCtr.Instance.inputField.text.Insert(CmdCtr.Instance.inputField.caretPosition, item.id.ToString());
+                            CmdCtr.Instance.inputField.caretPosition += item.id.ToString().Length;
                         }
                         GUILayout.Label(item.sellPrice.ToString(), new GUILayoutOption[]
                         {

@@ -15,6 +15,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using UtilNs;
 using System.IO;
+using BepInEx.Logging;
 
 namespace Commonder
 {
@@ -155,6 +156,17 @@ namespace Commonder
 
         public void Log(string str, Cmd.CallBackType type = CallBackType.Normal)
         {
+            LogLevel level = LogLevel.Info;
+            switch (type)
+            {
+                case CallBackType.Error:
+                    level = LogLevel.Error;
+                    break;
+                case CallBackType.Warning:
+                    level = LogLevel.Warning;
+                    break;
+            }
+            BepInExPlugin.Dbgl(str, level);
             if (callBack != null)
             {
                 callBack(str, type);

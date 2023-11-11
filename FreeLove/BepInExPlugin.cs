@@ -10,17 +10,20 @@ using Pathea.FrameworkNs;
 using Pathea.InteractionNs;
 using Pathea.InteractiveNs;
 using Pathea.NpcNs;
+using Pathea.ScenarioNs;
 using Pathea.SocialNs;
 using Pathea.SocialNs.EngagementNs;
 using Pathea.SocialNs.MarriageNs;
+using Pathea.UISystemV2.UIControl;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using UnityEngine;
 
 namespace FreeLove
 {
-    [BepInPlugin("aedenthorn.FreeLove", "FreeLove", "0.2.1")]
+    [BepInPlugin("aedenthorn.FreeLove", "FreeLove", "0.2.2")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -293,7 +296,7 @@ namespace FreeLove
                 }
             }
         }
-        [HarmonyPatch(typeof(UpdateMgr), nameof(UpdateMgr.Update))]
+        //[HarmonyPatch(typeof(UpdateMgr), nameof(UpdateMgr.Update))]
         static class UpdateMgr_Update_Patch
         {
             public static void Postfix()

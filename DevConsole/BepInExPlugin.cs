@@ -4,19 +4,8 @@ using BepInEx.Logging;
 using Commonder;
 using HarmonyLib;
 using Pathea;
-using Pathea.DesignerConfig;
-using Pathea.FrameworkNs;
-using Pathea.ItemNs;
-using Pathea.MonsterNs;
 using Pathea.Mtas;
-using Pathea.NpcNs;
-using Pathea.RideNs;
-using Pathea.StoryScript;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +19,8 @@ namespace DevConsole
         public static ConfigEntry<bool> modEnabled;
         public static ConfigEntry<bool> isDebug;
         public static ConfigEntry<KeyCode> hotkey;
+        public static ConfigEntry<KeyCode> upKey;
+        public static ConfigEntry<KeyCode> downKey;
 
         //public static ConfigEntry<int> nexusID;
 
@@ -45,6 +36,8 @@ namespace DevConsole
             modEnabled = Config.Bind<bool>("General", "Enabled", true, "Enable this mod");
             isDebug = Config.Bind<bool>("General", "IsDebug", true, "Enable debug logs");
             hotkey = Config.Bind<KeyCode>("Options", "MenuKey", KeyCode.F1, "Hotkey to toggle debug console");
+            upKey = Config.Bind<KeyCode>("Options", "UpKey", KeyCode.UpArrow, "Hotkey to move up through suggestions");
+            downKey = Config.Bind<KeyCode>("Options", "DownKey", KeyCode.DownArrow, "Hotkey to move down through suggestions");
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), null);
 

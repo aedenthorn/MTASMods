@@ -1,22 +1,15 @@
-﻿using Pathea;
-using Pathea.FrameworkNs;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System;
-using UnityEngine;
-using System.Collections;
-using Pathea.FestivalNs;
+﻿using Commonder;
+using Pathea;
 using Pathea.ActorNs;
+using Pathea.FrameworkNs;
 using Pathea.SocialNs;
-using Commonder;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.UIElements;
-using Object = UnityEngine.Object;
-using Image = UnityEngine.UI.Image;
-using static UnityEngine.UI.Image;
+using System.Collections;
 using System.IO;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
+using Object = UnityEngine.Object;
 
 namespace DevConsole
 {
@@ -59,7 +52,7 @@ namespace DevConsole
 
             go.AddComponent<ModCmd>();
             go.AddComponent<ItemDebug>().enabled = false;
-            
+
             var ctr = go.transform.Find("Commander").gameObject.AddComponent<CmdCtr>();
             var select = go.transform.Find("Commander/Panel/Completion View").gameObject.AddComponent<SelectorCtr>();
             var oldTips = go.transform.Find("Commander/Panel/Completion View/Content/Completion Item").gameObject;
@@ -103,11 +96,11 @@ namespace DevConsole
             ctr.stringBuilder = new System.Text.StringBuilder("<color=yellow>Url 已经存在 Pathea.MiscCmd.ShowVoiceLog</color>");
 
             select.cmdCtr = ctr;
-            select.container = ctr.transform.Find("Panel/Scroll View/Viewport/Content");
-            select.container.GetComponent<VerticalLayoutGroup>().spacing = 2;
             select.inputText = ctr.inputField;
             select.itemPrefab = newTips;
-            select.scroll = select.GetComponent<ScrollRect>();
+            //select.scroll = select.GetComponent<ScrollRect>();
+            //select.container = select.transform.Find("Content");
+            //select.container.GetComponent<VerticalLayoutGroup>().spacing = 2;
 
             tips.label = tips.GetComponentInChildren<Text>();
 

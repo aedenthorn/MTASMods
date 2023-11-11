@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace MapTeleport
 {
-    [BepInPlugin("aedenthorn.MapTeleport", "Map Teleport", "0.2.0")]
+    [BepInPlugin("aedenthorn.MapTeleport", "Map Teleport", "0.3.0")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
