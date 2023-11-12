@@ -77,7 +77,7 @@ namespace Pathea.SocialNs
                         GUILayout.Width((float)width)
                     }))
                     {
-                        CmdCtr.Instance.inputField.text.Insert(CmdCtr.Instance.inputField.caretPosition, npcId.ToString());
+                        CmdCtr.Instance.inputField.text = CmdCtr.Instance.inputField.text.Insert(CmdCtr.Instance.inputField.caretPosition, npcId.ToString());
                         CmdCtr.Instance.inputField.caretPosition += npcId.ToString().Length;
                     }
                     GUILayout.Label(npcId.ToString(), new GUILayoutOption[]
