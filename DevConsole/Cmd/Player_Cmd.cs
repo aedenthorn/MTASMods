@@ -1,12 +1,24 @@
 ﻿using System;
+using Commonder;
 using Pathea.CameraNs;
+using Pathea.CustomPlayer;
 using Pathea.FrameworkNs;
+using Pathea.MissionNs;
 using UnityEngine;
 
 namespace Pathea.ActorNs
 {
-    public class Player_Cmd : MonoBehaviour
+    public class Player_Cmd : MonoBehaviour, ICmd
     {
+        public void Start()
+        {
+            Cmd.Instance.Register(this);
+        }
+
+        public void OnDestroy()
+        {
+            Cmd.Instance.ClearAll();
+        }
         public void Update()
         {
             if (null == playerCC)
@@ -50,6 +62,12 @@ namespace Pathea.ActorNs
                 Module<Player>.Self.ToggleJetPack(true);
             }
         }
+        [Command("Player", "PlayerMagicMirror", "Open magic mirror cosmetic customization", false)]
+        public void PlayerMagicMirror()
+        {
+            Module<CustomPlayerMagicMirrorModule>.Self.StartEdit();
+        }
+
 
         public Player_Cmd()
         {

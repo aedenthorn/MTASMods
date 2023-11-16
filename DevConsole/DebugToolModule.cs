@@ -52,6 +52,7 @@ namespace DevConsole
 
             go.AddComponent<ModCmd>();
             go.AddComponent<ItemDebug>().enabled = false;
+            go.AddComponent<MissionDebug>().enabled = false;
 
             var ctr = go.transform.Find("Commander").gameObject.AddComponent<CmdCtr>();
             var select = go.transform.Find("Commander/Panel/Completion View").gameObject.AddComponent<SelectorCtr>();

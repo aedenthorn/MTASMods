@@ -33,8 +33,8 @@ namespace Pathea.SocialNs
 
         public void OnGUI()
         {
-            int num = 600;
-            int width = Mathf.CeilToInt((float)(num - 60) * 0.2f);
+            int num = 720;
+            int width = Mathf.CeilToInt((float)(num - 60) / 6);
             GUILayout.BeginArea(new Rect(0f, 80f, (float)num, (float)(Screen.height - 160)), GUI.skin.box);
             GUILayout.BeginHorizontal();
             filter = GUILayout.TextField(filter, new GUILayoutOption[] { GUILayout.ExpandWidth(true) }).ToLower();

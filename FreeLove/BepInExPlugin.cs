@@ -2,28 +2,26 @@
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
-using Pathea;
 using Pathea.ActorNs;
 using Pathea.BedSelect;
 using Pathea.DistributeChannelNs;
 using Pathea.FrameworkNs;
+using Pathea.HomeNs;
 using Pathea.InteractionNs;
 using Pathea.InteractiveNs;
 using Pathea.NpcNs;
-using Pathea.ScenarioNs;
 using Pathea.SocialNs;
+using Pathea.SocialNs.ChildNs;
 using Pathea.SocialNs.EngagementNs;
 using Pathea.SocialNs.MarriageNs;
-using Pathea.UISystemV2.UIControl;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
 using UnityEngine;
 
 namespace FreeLove
 {
-    [BepInPlugin("aedenthorn.FreeLove", "FreeLove", "0.2.2")]
+    [BepInPlugin("aedenthorn.FreeLove", "FreeLove", "0.3.5")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         private static BepInExPlugin context;
@@ -91,6 +89,26 @@ namespace FreeLove
                     failureType = SocialFailType.None;
                     __result = true;
                 }
+            }
+        }
+        [HarmonyPatch(typeof(SocialModule), nameof(SocialModule.DoPropose))]
+        static class SocialModule_DoPropose_Patch
+        {
+            public static void Postfix(MarriageData ___mMarriageData)
+            {
+                if (!modEnabled.Value)
+                    return;
+                ___mMarriageData.hasPlayWedding = false;
+            }
+        }
+        [HarmonyPatch(typeof(SocialModule), nameof(SocialModule.CanWedding))]
+        static class SocialModule_CanWedding_Patch
+        {
+            public static void Prefix(MarriageData ___mMarriageData)
+            {
+                if (!modEnabled.Value || ___mMarriageData.state != MarriageState.Propose)
+                    return;
+                ___mMarriageData.hasPlayWedding = false;
             }
         }
 
@@ -251,16 +269,27 @@ namespace FreeLove
                 return false;
             }
         }
+        [HarmonyPatch(typeof(SocialModule), nameof(SocialModule.IsMarriage), new Type[] { })]
+        static class SocialModule_IsMarriage_Patch_2
+        {
+            public static bool Prefix(ref bool __result)
+            {
+                if (!modEnabled.Value || !Environment.StackTrace.Contains("DialogControl") || !Environment.StackTrace.Contains("InitButtons"))
+                    return true;
+                __result = false;
+                return false;
+            }
+        }
         [HarmonyPatch(typeof(BedSelectModule), nameof(BedSelectModule.GetAllBedSelectNPCIds))]
         static class BedSelectModule_GetAllBedSelectNPCIds_Patch
         {
             public static void Postfix(List<NPCInfo> __result)
             {
-                if (!modEnabled.Value)
+                if (!modEnabled.Value || __result is null)
                     return;
                 Module<NpcMgr>.Self.ForeachNpc(delegate (Npc npc)
                 {
-                    if (Module<SocialModule>.Self.GetSocialType(npc.id) == SocialType.Mate)
+                    if (Module<SocialModule>.Self.GetSocialType(npc.id) == SocialType.Mate && !__result.Exists(i => i.npcId == npc.id))
                     {
                         __result.Add(new NPCInfo
                         {
@@ -294,6 +323,68 @@ namespace FreeLove
                 {
                     __result.lvlMax = SocialLevel.MateHappiest;
                 }
+            }
+        }
+        public static bool skip;
+        [HarmonyPatch(typeof(MarriageController), "OnMateSleepdown")]
+        static class MarriageController_OnMateSleepdown_Patch
+        {
+            public static void Postfix(MarriageController __instance, MarriageData ___data, Npc ___mate)
+            {
+                if (!modEnabled.Value || skip || ___mate is null)
+                    return;
+                skip = true;
+                Module<NpcMgr>.Self.ForeachNpc(delegate (Npc npc)
+                {
+                    try
+                    {
+                        var drama = BedUnit.GetDoublebedNPCDrama(npc.id, out var bedSlot);
+                        if (Module<SocialModule>.Self.GetSocialType(npc.id) == SocialType.Mate && ___mate.id != npc.id)
+                        {
+                            AccessTools.Method(typeof(MarriageController), "OnMateSleepdown").Invoke(__instance, new object[] { drama, bedSlot });
+                        }
+                    }
+                    catch { }
+                });
+                skip = false;
+            }
+        }
+        [HarmonyPatch(typeof(MarriageController), "OnPlayerWakeup")]
+        static class MarriageController_OnPlayerWakeup_Patch
+        {
+            public static bool Prefix()
+            {
+                if (!modEnabled.Value)
+                    return true;
+                return false;
+            }
+        }
+        [HarmonyPatch(typeof(ChildMate), "OnInteract")]
+        static class ChildMate_OnInteract_Patch
+        {
+            public static bool Prefix(IChildController ___ctrl, Actor actor, ChoiceType type)
+            {
+                if (!modEnabled.Value)
+                    return true;
+                if (type != ChoiceType.ChildGet)
+                {
+                    return false;
+                }
+                ___ctrl.ShowGetChildDialog(true, delegate
+                {
+                    Module<NpcInteractionManager>.Self.QuitInteraction();
+                });
+                return false;
+            }
+        }
+        [HarmonyPatch(typeof(ChildController), "ShowGetChildDialog")]
+        static class ChildController_ShowGetChildDialog_Patch
+        {
+            public static void Prefix(ChildController __instance, ref ChildMate ___mate)
+            {
+                if (!modEnabled.Value)
+                    return;
+                ___mate = new ChildMate(__instance, (int)AccessTools.Field(typeof(NpcInteractionManager), "curNpc").GetValue(Module<NpcInteractionManager>.Self));
             }
         }
         //[HarmonyPatch(typeof(UpdateMgr), nameof(UpdateMgr.Update))]

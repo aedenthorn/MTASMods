@@ -11,6 +11,7 @@ using Pathea.ItemNs;
 using Pathea.NpcNs;
 using Pathea.NpcTaskNs;
 using Pathea.ScenarioNs;
+using Pathea.SocialNs;
 using Pathea.TimeNs;
 using UnityEngine;
 
@@ -388,6 +389,12 @@ namespace Pathea
         public void NpcChangeSuit(int id)
         {
             Module<NpcReplaceSuitModule>.Self.NpcRelpaceSuit(id);
+        }
+
+        [Command("Npc", "ShowChildRenameDialog", "Show child rename dialog", false)]
+        public void ShowChildRenameDialog(int id)
+        {
+            Module<SocialModule>.Self.ShowChildRenameDialog(id, delegate { });
         }
 
         public NpcCmd()
