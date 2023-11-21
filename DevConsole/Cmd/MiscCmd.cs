@@ -7,6 +7,7 @@ using System.Text;
 using BreedStore;
 using Commonder;
 using InputMethodNs;
+using Pathea;
 using Pathea.AchievementNs;
 using Pathea.ActorNs;
 using Pathea.AdventureMachineNs;
@@ -116,8 +117,9 @@ using UnityEngine.Diagnostics;
 using UnityExtensions;
 using UtilNs;
 using static AK.SWITCHES;
+using AttrType = Pathea.AttrType;
 
-namespace Pathea
+namespace DevConsole
 {
     public class MiscCmd : MonoBehaviour, ICmd
     {
@@ -215,7 +217,7 @@ namespace Pathea
             Module<ReadingModule>.Self.OpenHobby();
         }
 
-        [Command("ECA", "TestMagicMirrorCosmeic", "测试魔镜整容", false)]
+        [Command("ECA", "TestMagicMirrorCosmetic", "测试魔镜整容", false)]
         public void TestMagicMirrorCosmetic()
         {
             Module<CustomPlayerMagicMirrorModule>.Self.StartEdit();

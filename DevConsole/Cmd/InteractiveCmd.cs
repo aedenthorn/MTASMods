@@ -4,7 +4,7 @@ using Pathea.FrameworkNs;
 using Pathea.InteractiveNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class InteractiveCmd : MonoBehaviour, ICmd
     {

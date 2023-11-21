@@ -4,14 +4,19 @@ using BepInEx.Logging;
 using Commonder;
 using HarmonyLib;
 using Pathea;
+using Pathea.ActorNs;
+using Pathea.CustomPlayer;
+using Pathea.FrameworkNs;
 using Pathea.Mtas;
+using Pathea.UISystemV2.UI;
+using Pathea.UISystemV2.UIControl;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace DevConsole
 {
-    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.4.1")]
+    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.6.0")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         public static BepInExPlugin context;
@@ -21,6 +26,11 @@ namespace DevConsole
         public static ConfigEntry<KeyCode> hotkey;
         public static ConfigEntry<KeyCode> upKey;
         public static ConfigEntry<KeyCode> downKey;
+        public static ConfigEntry<KeyCode> zoomKey;
+        public static ConfigEntry<KeyCode> jetPackKey;
+        public static ConfigEntry<KeyCode> jumpTimeKey1;
+        public static ConfigEntry<KeyCode> jumpTimeKey2;
+        
 
         //public static ConfigEntry<int> nexusID;
 
@@ -38,6 +48,10 @@ namespace DevConsole
             hotkey = Config.Bind<KeyCode>("Options", "MenuKey", KeyCode.F1, "Hotkey to toggle debug console");
             upKey = Config.Bind<KeyCode>("Options", "UpKey", KeyCode.UpArrow, "Hotkey to move up through suggestions");
             downKey = Config.Bind<KeyCode>("Options", "DownKey", KeyCode.DownArrow, "Hotkey to move down through suggestions");
+            zoomKey = Config.Bind<KeyCode>("Options", "ZoomKey", KeyCode.LeftControl, "Hotkey to make player zoom");
+            jetPackKey = Config.Bind<KeyCode>("Options", "JetPackKey", KeyCode.F4, "Hotkey to toggle jetpack");
+            jumpTimeKey1 = Config.Bind<KeyCode>("Options", "JumpTimeKey1", KeyCode.None, "Hotkey to jump time");
+            jumpTimeKey2 = Config.Bind<KeyCode>("Options", "JumpTimeKey2", KeyCode.None, "Hotkey to jump time, no sleep");
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), null);
 
@@ -81,5 +95,6 @@ namespace DevConsole
                 Singleton<GameMgr>.Instance.Append(new DebugToolModule());
             }
         }
+
     }
 }

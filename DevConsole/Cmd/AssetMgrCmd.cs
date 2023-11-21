@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Commonder;
+using Pathea;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class AssetMgrCmd : MonoBehaviour, ICmd
     {

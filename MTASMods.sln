@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionCost", "Productio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantMod", "PlantMod\PlantMod.csproj", "{D7D011B1-AE25-4F32-BBED-225152D28330}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullCharacterEdit", "FullCharacterEdit\FullCharacterEdit.csproj", "{96EB8813-AECA-4637-B63C-A0E1CAB47C7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,10 @@ Global
 		{D7D011B1-AE25-4F32-BBED-225152D28330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7D011B1-AE25-4F32-BBED-225152D28330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7D011B1-AE25-4F32-BBED-225152D28330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96EB8813-AECA-4637-B63C-A0E1CAB47C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96EB8813-AECA-4637-B63C-A0E1CAB47C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96EB8813-AECA-4637-B63C-A0E1CAB47C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96EB8813-AECA-4637-B63C-A0E1CAB47C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

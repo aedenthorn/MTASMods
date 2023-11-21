@@ -5,7 +5,7 @@ using Pathea.FrameworkNs;
 using Pathea.TimeNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class FestivalCmd : MonoBehaviour, ICmd
     {

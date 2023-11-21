@@ -1,5 +1,6 @@
 ﻿using System;
 using Commonder;
+using Pathea;
 using Pathea.ActorNs;
 using Pathea.FrameworkNs;
 using Pathea.MissionNs;
@@ -7,7 +8,7 @@ using Pathea.ScenarioNs;
 using Pathea.StoryScript;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class SceneItemCmd : MonoBehaviour, ICmd
     {

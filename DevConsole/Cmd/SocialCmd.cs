@@ -9,7 +9,7 @@ using Pathea.SocialNs.PartyNs;
 using Pathea.SocialNs.PK;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class SocialCmd : MonoBehaviour, ICmd
     {

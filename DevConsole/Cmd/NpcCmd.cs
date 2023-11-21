@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Commonder;
+using HarmonyLib;
+using Pathea;
 using Pathea.ActionNs;
 using Pathea.ActorNs;
 using Pathea.BehaviorNs;
 using Pathea.EquipmentNs;
 using Pathea.FrameworkNs;
+using Pathea.InfoTip;
+using Pathea.InputSolution;
 using Pathea.ItemNs;
 using Pathea.NpcNs;
 using Pathea.NpcTaskNs;
+using Pathea.PetNs;
 using Pathea.ScenarioNs;
 using Pathea.SocialNs;
 using Pathea.TimeNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class NpcCmd : MonoBehaviour, ICmd
     {
@@ -390,6 +396,7 @@ namespace Pathea
         {
             Module<NpcReplaceSuitModule>.Self.NpcRelpaceSuit(id);
         }
+
 
         [Command("Npc", "ShowChildRenameDialog", "Show child rename dialog", false)]
         public void ShowChildRenameDialog(int id)

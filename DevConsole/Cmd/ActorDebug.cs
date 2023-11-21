@@ -1,8 +1,9 @@
 ﻿using System;
+using Pathea.ActorNs;
 using Pathea.FrameworkNs;
 using UnityEngine;
 
-namespace Pathea.ActorNs
+namespace DevConsole.ActorNs
 {
     public class ActorDebug : MonoBehaviour
     {

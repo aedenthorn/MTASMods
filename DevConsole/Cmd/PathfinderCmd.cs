@@ -6,7 +6,7 @@ using Pathea.PathfinderNs;
 using Pathfinding;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class PathfinderCmd : MonoBehaviour, ICmd
     {

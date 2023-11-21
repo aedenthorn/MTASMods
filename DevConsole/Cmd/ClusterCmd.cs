@@ -6,7 +6,7 @@ using Pathea.FrameworkNs;
 using Pathea.NpcNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class ClusterCmd : MonoBehaviour, ICmd
     {

@@ -4,7 +4,7 @@ using Pathea.FrameworkNs;
 using Pathea.StoryScript;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class StoryCmd : MonoBehaviour, ICmd
     {

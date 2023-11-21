@@ -6,7 +6,7 @@ using Pathea.SocialNs;
 using Pathea.SocialNs.PartyNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class PartyDebug : MonoBehaviour, ICmd
     {

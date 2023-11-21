@@ -5,7 +5,7 @@ using Pathea.FollowNs;
 using Pathea.FrameworkNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class FollowCmd : MonoBehaviour, ICmd
     {

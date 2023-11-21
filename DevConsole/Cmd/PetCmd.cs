@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using Commonder;
+using HarmonyLib;
+using Pathea;
 using Pathea.FrameworkNs;
+using Pathea.InfoTip;
 using Pathea.PetNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class PetCmd : MonoBehaviour, ICmd
     {
@@ -22,6 +26,36 @@ namespace Pathea
         public void PetUnlock()
         {
             Module<PetMgr>.Self.Unlock();
+        }
+
+        [Command("Npc", "PetRecruitForce", "Recruit Npc pet by ID", false)]
+        public void RecruitPet(int id)
+        {
+            var origins = (List<PetOrigin>)AccessTools.Field(typeof(PetMgr), "origins").GetValue(Module<PetMgr>.Self);
+            var pets = (List<Pet>)AccessTools.Field(typeof(PetMgr), "pets").GetValue(Module<PetMgr>.Self);
+            var datas = (List<PetData>)AccessTools.Field(typeof(PetMgr), "datas").GetValue(Module<PetMgr>.Self);
+            var uiDatas = (List<PetUIData>)AccessTools.Field(typeof(PetMgr), "uiDatas").GetValue(Module<PetMgr>.Self);
+            var asset = (PetAsset)AccessTools.Field(typeof(PetMgr), "asset").GetValue(Module<PetMgr>.Self);
+            foreach (var o in origins)
+            {
+                if (o.OriginType == PetOriginType.Npc && o.protoId == id)
+                {
+                    Pet pet = o.StartRecruit(8000, Module<PetMgr>.Self);
+                    if (pet != null && !Module<PetMgr>.Self.HasPet(pet.PetType, pet.instId))
+                    {
+                        pets.Add(pet);
+                        datas.Add(pet.Data);
+                        uiDatas.Add(pet.UIData);
+                        pet.ReAllocatingHouse();
+                        pet.OnRecruitEnter(true);
+                        o.OnRecruitEnter(pet.instId, true);
+                        string iconPath = (pet != null) ? pet.iconPath1 : "";
+                        string info = TextMgr.GetStr(asset.tipIdRecruit);
+                        Module<InfoTipMgr>.Self.SendCustomImageTip(info, iconPath, OffsetMode.Head, TipCustomBg.None, "");
+                        return;
+                    }
+                }
+            }
         }
 
         [Command("Pet", "PetStartRecruit", "招募宠物", false)]

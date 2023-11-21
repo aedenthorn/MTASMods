@@ -5,7 +5,7 @@ using Pathea.BattleFieldNs;
 using Pathea.FrameworkNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class BattleDebug : MonoBehaviour, ICmd
     {

@@ -5,7 +5,7 @@ using Pathea.FrameworkNs;
 using Pathea.SpawnNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class SpawnCmd : MonoBehaviour, ICmd
     {

@@ -4,7 +4,7 @@ using Pathea.DonateNs;
 using Pathea.FrameworkNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class DonateCmd : MonoBehaviour, ICmd
     {

@@ -5,7 +5,7 @@ using Pathea.BehaviorNs;
 using Pathea.FrameworkNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class BehaviorDebug : MonoBehaviour, ICmd
     {

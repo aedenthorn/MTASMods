@@ -4,9 +4,10 @@ using Commonder;
 using Pathea.BehaviorNs;
 using Pathea.FrameworkNs;
 using Pathea.NpcNs;
+using Pathea.SocialNs;
 using UnityEngine;
 
-namespace Pathea.SocialNs
+namespace DevConsole.SocialNs
 {
     public class FavorDebug : MonoBehaviour, ICmd
     {

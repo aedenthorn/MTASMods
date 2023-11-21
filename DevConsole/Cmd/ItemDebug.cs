@@ -6,7 +6,7 @@ using Pathea.ItemNs;
 using Pathea.NpcNs;
 using UnityEngine;
 
-namespace Pathea.SocialNs
+namespace DevConsole.SocialNs
 {
     public class ItemDebug : MonoBehaviour, ICmd
     {

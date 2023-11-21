@@ -5,7 +5,7 @@ using Pathea.FrameworkNs;
 using Pathea.RunbullNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class RunbullCmd : MonoBehaviour, ICmd
     {

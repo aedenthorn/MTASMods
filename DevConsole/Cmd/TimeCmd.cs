@@ -1,28 +1,33 @@
 ﻿using System;
+using DevConsole;
 using Pathea;
 using Pathea.FrameworkNs;
 using Pathea.SleepNs;
 using Pathea.TimeNs;
 using UnityEngine;
 
-public class TimeCmd : MonoBehaviour
+namespace Commonder
 {
-    public void Update()
+    public class TimeCmd : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.F10))
+        public void Update()
         {
-            Module<TimeModule>.Self.JumpTime(new GameTimeSpan(1, 0, 0));
-            return;
+            if (Input.GetKeyDown(BepInExPlugin.jumpTimeKey1.Value))
+            {
+                Module<TimeModule>.Self.JumpTime(new GameTimeSpan(1, 0, 0));
+                return;
+            }
+            if (Input.GetKeyDown(BepInExPlugin.jumpTimeKey2.Value))
+            {
+                Module<SleepModule>.Self.disableForceSleep = true;
+                Module<TimeModule>.Self.JumpTime(new GameTimeSpan(1, 0, 0, 0));
+                Module<SleepModule>.Self.disableForceSleep = false;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.F12))
+
+        public TimeCmd()
         {
-            Module<SleepModule>.Self.disableForceSleep = true;
-            Module<TimeModule>.Self.JumpTime(new GameTimeSpan(1, 0, 0, 0));
-            Module<SleepModule>.Self.disableForceSleep = false;
         }
     }
 
-    public TimeCmd()
-    {
-    }
 }

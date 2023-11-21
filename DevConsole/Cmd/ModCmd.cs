@@ -4,6 +4,7 @@ using Pathea;
 using Pathea.DesignerConfig;
 using Pathea.FrameworkNs;
 using Pathea.ItemNs;
+using Pathea.MissionNs;
 using Pathea.MonsterNs;
 using Pathea.NpcNs;
 using Pathea.RideNs;
@@ -50,6 +51,10 @@ namespace DevConsole
             var rides = AccessTools.FieldRefAccess<RideModule, ConfigReaderId<RidableProtoData>>(Module<RideModule>.Self, "rideProtos").Select(i => TextMgr.GetStr(i.nameId) + ": " + i.id).ToList();
             rides.Sort();
             File.WriteAllLines(Path.Combine(path, "ridables.txt"), rides);
+            
+            var quests = AccessTools.FieldRefAccess<MissionManager, Dictionary<int, MissionBaseInfo>>(Module<MissionManager>.Self, "allMissionBaseInfoById").Values.Select(i => TextMgr.GetStr(i.MissionNameId) + ": " + i.InstanceId).ToList();
+            quests.Sort();
+            File.WriteAllLines(Path.Combine(path, "missions.txt"), quests);
 
             BepInExPlugin.Dbgl($"Dumped data to {path}");
         }

@@ -7,7 +7,7 @@ using Pathea.MonsterNs;
 using Pathea.ScenarioNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class MonsterCmd : MonoBehaviour, ICmd
     {

@@ -6,7 +6,7 @@ using Pathea.FrameworkNs;
 using Pathea.PreOrderNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class PreOrderCmd : MonoBehaviour, ICmd
     {

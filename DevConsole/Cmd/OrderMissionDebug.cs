@@ -1,13 +1,12 @@
 ﻿using Commonder;
 using Pathea.FrameworkNs;
 using Pathea.MissionNs;
-using Pathea.NpcNs;
 using System;
 using UnityEngine;
 
 namespace DevConsole.SocialNs
 {
-    public class MissionDebug : MonoBehaviour, ICmd
+    public class OrderMissionDebug : MonoBehaviour, ICmd
     {
         public void Awake()
         {
@@ -19,15 +18,15 @@ namespace DevConsole.SocialNs
             Cmd.Instance.ClearAll();
         }
 
-        [Command("Mission", "MissionShowPanel", "Show quests", false)]
+        [Command("Mission", "OrderShowPanel", "Show orders", false)]
         public void OrderPanelShow(bool isShow)
         {
             base.enabled = isShow;
         }
 
-        public bool CanShow(Mission mission)
+        public bool CanShow(OrderMission mission)
         {
-            return string.IsNullOrEmpty(filter) || mission.MissionNameStr.Contains(filter) || mission.MissionDescribe.Contains(filter) || Module<NpcMgr>.Self.GetNpcName(mission.deliverNpcId).Contains(filter);
+            return string.IsNullOrEmpty(filter) || mission.TitleStr.Contains(filter) || mission.Description.Contains(filter) || mission.DeliverName.Contains(filter);
         }
 
         public void OnGUI()
@@ -58,11 +57,11 @@ namespace DevConsole.SocialNs
             GUILayout.EndHorizontal();
 
             scrollPos = GUILayout.BeginScrollView(scrollPos, GUI.skin.box);
-            foreach(var o in Module<MissionManager>.Self.GetMissionActived())
+            foreach(var o in Module<OrderMissionManager>.Self.ActiveOrder)
             {
                 if (CanShow(o))
                 {
-                    var id = o.MissionId.ToString();
+                    var id = o.OrderId.ToString();
                     GUILayout.BeginHorizontal(GUI.skin.box, Array.Empty<GUILayoutOption>());
                     if (GUILayout.Button(id, new GUILayoutOption[]
                     {
@@ -72,17 +71,21 @@ namespace DevConsole.SocialNs
                         CmdCtr.Instance.inputField.text = CmdCtr.Instance.inputField.text.Insert(CmdCtr.Instance.inputField.caretPosition, id);
                         CmdCtr.Instance.inputField.caretPosition += id.Length;
                     }
-                    GUILayout.Label(o.MissionNameStr, new GUILayoutOption[]
+                    GUILayout.Label(o.TitleStr, new GUILayoutOption[]
                     {
                         GUILayout.Width((float)width)
                     });
-                    GUILayout.Label(o.MissionDescribe, new GUILayoutOption[]
+                    GUILayout.Label(o.Description, new GUILayoutOption[]
                     {
                         GUILayout.Width((float)width)
                     });
                     if (GUILayout.Button("Finish", new GUILayoutOption[] { GUILayout.Width(width) }))
                     {
-                        Module<MissionManager>.Self.SubmitMission(o.MissionId);
+                        Module<OrderMissionManager>.Self.EndOrder(o.OrderId, MissionEndResult.Accomplished);
+                    }
+                    if (GUILayout.Button("Give Up", new GUILayoutOption[] { GUILayout.Width(width) }))
+                    {
+                        Module<OrderMissionManager>.Self.EndOrder(o.OrderId, MissionEndResult.GiveUp);
                     }
                     GUILayout.EndHorizontal();
                 }

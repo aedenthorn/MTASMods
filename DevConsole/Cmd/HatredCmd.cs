@@ -6,7 +6,7 @@ using Pathea.FrameworkNs;
 using Pathea.HatredNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class HatredCmd : MonoBehaviour, ICmd
     {

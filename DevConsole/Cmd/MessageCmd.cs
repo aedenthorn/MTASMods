@@ -4,7 +4,7 @@ using Pathea.FrameworkNs;
 using Pathea.MessageNs;
 using UnityEngine;
 
-namespace Pathea
+namespace DevConsole
 {
     public class MessageCmd : MonoBehaviour, ICmd
     {
