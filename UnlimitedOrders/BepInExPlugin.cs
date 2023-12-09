@@ -37,8 +37,6 @@ namespace UnlimitedOrders
             orderPanelSlots = Config.Bind<string>("Options", "OrderPanelSlots", "1,1,2,7", "Max order slots per type (huge, big, medium, small)");
             orderTypeGenRate = Config.Bind<string>("Options", "OrderTypeGenRate", "0.1,0.15,0.2,0.5", "Generation rate per type  (huge, big, medium, small)");
 
-            //nexusID = Config.Bind<int>("General", "NexusID", 1, "Nexus mod ID for updates");
-
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), null);
 
             Dbgl("Mod Loaded");

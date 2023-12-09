@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace DevConsole
 {
-    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.6.0")]
+    [BepInPlugin("aedenthorn.DevConsole", "DevConsole", "0.7.0")]
     public partial class BepInExPlugin : BaseUnityPlugin
     {
         public static BepInExPlugin context;

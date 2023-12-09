@@ -48,6 +48,7 @@ namespace DevConsole
             go.AddComponent<PreOrderCmd>();
             go.AddComponent<RunbullCmd>().enabled = false;
             go.AddComponent<SceneItemCmd>();
+            go.AddComponent<SocialCmd>();
             go.AddComponent<SpawnCmd>().enabled = false;
             go.AddComponent<StoryCmd>();
             go.AddComponent<TimeCmd>();
